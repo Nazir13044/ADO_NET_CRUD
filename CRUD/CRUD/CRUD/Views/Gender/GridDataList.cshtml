@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CRUD.Models.Gender>
+
+@if(Model.Count()>0)
+{ 
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GenderID)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.GenderName)
+            </th>
+            <th>
+                Operation
+            </th>
+        </tr>
+
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GenderID)
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.GenderName)
+                </td>
+                <td>
+                    @Html.ActionLink("Select", "Index", new { id = item.GenderID}) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.GenderID})
+                </td>
+            </tr>
+        }
+
+
+    </table>
+}
+

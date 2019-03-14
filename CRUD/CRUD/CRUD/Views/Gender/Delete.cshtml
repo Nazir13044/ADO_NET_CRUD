@@ -1,0 +1,60 @@
+﻿@model CRUD.Models.Gender
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <dl class="dl-horizontal">
+        <h4>Delete Staff Info</h4>
+        <hr />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GenderID)
+        </dt>
+        <dd>
+            @Html.EditorFor(model => model.GenderID, new { htmlAttributes = new { @class = "form-control", @ReadOnly = "ReadOnly" } })
+          
+        </dd>
+        <br/>
+        <dt>
+            @Html.DisplayNameFor(model => model.GenderName)
+        </dt>
+
+        <dd>
+            @Html.EditorFor(model => model.GenderName, new { htmlAttributes = new { @class = "form-control", @ReadOnly = "ReadOnly" } })
+           
+        </dd>
+
+
+
+       
+
+    </dl>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Delete" class="btn btn-default" onclick="return confirm('Are you sure you want delete');" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+    
+
+    @*<div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" onclick="return confirm('Are you sure you want delete');" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
+
+
+
+
+}
+
+@*<div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Delete" class="btn btn-default" />
+        </div>
+    </div>
+
+    @Html.ActionLink("Delete", "Delete", new { id = Model.GenderId })*@ 
+
+
+

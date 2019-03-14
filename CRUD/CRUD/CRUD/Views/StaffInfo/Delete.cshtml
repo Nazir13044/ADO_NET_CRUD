@@ -1,0 +1,65 @@
+﻿@model CRUD.Models.StaffInfo
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <dl class="dl-horizontal">
+        <h4>Delete Staff Info</h4>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.StaffPin)
+        </dt>
+
+        <dd>
+            @Html.EditorFor(model => model.StaffPin, new { htmlAttributes = new { @class = "form-control", @ReadOnly = "ReadOnly" } })
+
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.StaffName)
+        </dt>
+
+        <dd>
+            @Html.EditorFor(model => model.StaffName, new { htmlAttributes = new { @class = "form-control", @ReadOnly = "ReadOnly" } })
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.GenderName)
+        </dt>
+
+        <dd>
+            @Html.EditorFor(model => model.GenderName, new { htmlAttributes = new { @class = "form-control", @ReadOnly = "ReadOnly" } })
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control", @ReadOnly = "ReadOnly" } })
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+    </dl>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Delete" class="btn btn-default" onclick="return confirm('Are you sure you want delete');" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+
+
+    @*<div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" onclick="return confirm('Are you sure you want delete');" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>*@
+
+}
